@@ -1,0 +1,49 @@
+using System;
+ 
+class GFG
+{
+ 
+    // Assign c's value to a, a's value
+    // to b and b's value to c.
+    static void swapThree(ref int a,
+                        ref int b,
+                        ref int c)
+    {
+    // Store sum of all in a
+    // (a = 60)
+        a = a + b + c;
+ 
+    // After this, b has value of a
+    // (b = 60 – (20 + 30) = 10)
+        b = a - (b + c);
+ 
+    // After this, c has value of b
+    // (c = 60 – (10 + 30) = 20)
+        c = a - (b + c);
+ 
+    // After this, a has value of c
+    // (a = 60 – (10 + 20) = 30)
+        a = a - (b + c);
+    }
+ 
+    // Driver Code
+    static void Main(String []args)
+    {
+         
+        int a = 10, b = 20, c = 30;
+        Console.WriteLine("Before swapping a = " +
+                                a + ", b = " + b +
+                                    ", c = " + c);
+                             
+        // Calling Function
+        swapThree(ref a, ref b,ref c);
+ 
+        Console.Write("After swapping a = " +
+                           a + ", b = " + b +
+                               ", c = " + c);
+    }
+}
+ 
+Output : 
+ Before swapping a = 10, b = 20, c = 30
+After swapping a = 30, b = 10, c = 20
